@@ -1,0 +1,19 @@
+# Development mode
+dev:
+  # Server configurations
+  server:
+    host: "localhost"
+    port: 8000
+
+  # Database path
+  database: "oustory.db"
+
+# Production mode
+prod:
+  # Server configurations
+  server:
+    host: "localhost"
+    port: 8000
+
+  # Database path
+  database: "oustory.db"

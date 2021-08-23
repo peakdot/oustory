@@ -1,0 +1,21 @@
+export default {
+    yes: "Тийм",
+    no: "Үгүй",
+    ok: "За",
+    search: "Хайх",
+    copy: "Хуулах",
+    email: "Э-мэйл",
+    charge: "Цэнэглэх",
+    cancel: "Болих",
+    delete: "Устгах",
+    show: "Харах",
+    _time: {
+        yesterday: "Өчигдөр",
+        days_ago: "өдрийн өмнө",
+        hour_ago: "Цагийн өмнө",
+        hours_ago: "цагийн өмнө",
+        minute_ago: "Минутийн өмнө",
+        minutes_ago: "минутийн өмнө",
+        just_now: "Дөнгөж сая",
+    },
+}

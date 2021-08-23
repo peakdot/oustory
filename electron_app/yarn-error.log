@@ -1,0 +1,38 @@
+Arguments: 
+  /usr/local/bin/node /usr/local/bin/yarn add --dev electron
+
+PATH: 
+  /home/orgio/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/local/go/bin:/home/orgio/go/bin:/home/orgio/Programs/dart-sass
+
+Yarn version: 
+  1.22.10
+
+Node version: 
+  14.17.5
+
+Platform: 
+  linux x64
+
+Trace: 
+  SyntaxError: /home/orgio/Projects/oustory/electron_app/package.json: Unexpected string in JSON at position 139
+      at JSON.parse (<anonymous>)
+      at /usr/local/lib/node_modules/yarn/lib/cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (/usr/local/lib/node_modules/yarn/lib/cli.js:310:30)
+      at /usr/local/lib/node_modules/yarn/lib/cli.js:321:13
+
+npm manifest: 
+  {
+    "name": "electron_app",
+    "version": "1.0.0",
+    "description": "OUStory",
+    "main": "index.js",
+    "author": "Bat-Orgil Tserenjargal"
+    "license": "MIT"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

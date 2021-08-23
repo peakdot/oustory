@@ -1,0 +1,21 @@
+export default {
+    yes: "Yes",
+    no: "No",
+    ok: "OK",
+    search: "Search",
+    copy: "Copy",
+    email: "Email",
+    charge: "Charge",
+    cancel: "Cancel",
+    delete: "Delete",
+    show: "Show",
+    _time: {
+        yesterday: "Yesterday",
+        days_ago: "days ago",
+        hour_ago: "Hour ago",
+        hours_ago: "hours ago",
+        minute_ago: "Minute ago",
+        minutes_ago: "minutes ago",
+        just_now: "Just now",
+    },
+}
