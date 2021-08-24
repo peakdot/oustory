@@ -9,6 +9,13 @@ export default {
     cancel: "Болих",
     delete: "Устгах",
     show: "Харах",
+    as: "Дүр",
+    want: "Зорилго",
+    because: "Шалтгаан",
+    home: "Нүүр",
+    projects: "Төслүүд",
+    put_something_here: "Энд нэг юм тавиарай",
+    add_backlog: "Backlog нэмэх",
     _time: {
         yesterday: "Өчигдөр",
         days_ago: "өдрийн өмнө",

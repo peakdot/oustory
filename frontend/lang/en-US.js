@@ -9,6 +9,12 @@ export default {
     cancel: "Cancel",
     delete: "Delete",
     show: "Show",
+    as: "As",
+    want: "Want",
+    because: "Because",
+    home: "Home",
+    projects: "Projects",
+    put_something_here: "Put something here",
     _time: {
         yesterday: "Yesterday",
         days_ago: "days ago",

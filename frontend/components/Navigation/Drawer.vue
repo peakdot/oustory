@@ -13,35 +13,44 @@
       </v-list-item-content>
     </v-list-item>
     <v-divider></v-divider>
-    <v-list nav dense class="grow">
+    <v-list nav dense class="grow" rounded>
       <div v-for="item in items" :key="item.name">
-        <v-subheader class="text-uppercase mt-2" v-if="item.subheader">
-          {{ item.subheader }}
-        </v-subheader>
-        <v-list-item v-else :to="localePath(item.link)" class="mt-1">
-          <v-list-item-icon v-if="item.icon">
-            <v-icon>{{ item.icon }}</v-icon>
-          </v-list-item-icon>
-          <v-list-item-avatar v-if="item.img" size="24">
-            <v-img :src="item.img"></v-img>
-          </v-list-item-avatar>
-          <v-list-item-content>
-            <v-list-item-title>{{ item.name }}</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
+        <v-list-item-group color="primary darken-1">
+          <v-subheader class="text-uppercase mt-2" v-if="item.subheader">
+            {{ item.subheader }}
+          </v-subheader>
+          <v-list-item v-else :to="localePath(item.link)" class="mt-1">
+            <v-list-item-icon v-if="item.icon">
+              <v-icon>{{ item.icon }}</v-icon>
+            </v-list-item-icon>
+            <v-list-item-avatar v-if="item.img" size="24">
+              <v-img :src="item.img"></v-img>
+            </v-list-item-avatar>
+            <v-list-item-content>
+              <v-list-item-title>{{ item.name }}</v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+        </v-list-item-group>
       </div>
       <v-subheader class="text-uppercase mt-2">
         {{ $t("projects") }}
       </v-subheader>
       <template v-if="!loadingProjects && projects.length > 0">
-        <v-list-item class="mt-1" v-for="project in projects" :key="project.ID">
-          <v-list-item-avatar v-if="project.Logo" size="24">
-            <v-img :src="project.Logo"></v-img>
-          </v-list-item-avatar>
-          <v-list-item-content>
-            <v-list-item-title>{{ project.Name }}</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
+        <v-list-item-group color="primary darken-1">
+          <v-list-item
+            class="mt-1"
+            v-for="project in projects"
+            :key="project.ID"
+            :to="`/projects/${project.ID}`"
+          >
+            <v-list-item-avatar v-if="project.Logo" size="24">
+              <v-img :src="project.Logo"></v-img>
+            </v-list-item-avatar>
+            <v-list-item-content>
+              <v-list-item-title>{{ project.Name }}</v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+        </v-list-item-group>
       </template>
       <template v-if="!loadingProjects && projects.length == 0">
         <div class="text-center text--secondary">

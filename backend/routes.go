@@ -21,6 +21,7 @@ func (app *application) routes() http.Handler {
 
 	router.Route("/api", func(r chi.Router) {
 		r.Get("/projects", app.getProjects)
+		r.Get("/projects/{id}/stories", app.getStories)
 	})
 
 	router.Route("/pub", func(r chi.Router) {

@@ -2,7 +2,9 @@ package main
 
 import (
 	"net/http"
+	"strconv"
 
+	"github.com/go-chi/chi"
 	"github.com/peakdot/oustory/common/oapi"
 	"github.com/peakdot/oustory/entity"
 )
@@ -17,6 +19,22 @@ func (app *application) getProjects(w http.ResponseWriter, r *http.Request) {
 		oapi.ServerError(w, result.Error)
 		return
 	}
-
 	oapi.SendResp(w, projects)
+}
+
+func (app *application) getStories(w http.ResponseWriter, r *http.Request) {
+	projectID, _ := strconv.Atoi(chi.URLParam(r, "id"))
+	if projectID <= 0 {
+		oapi.ClientError(w, http.StatusBadRequest)
+		return
+	}
+
+	var stories []*entity.UserStory
+	result := app.DB.Where("project_id=?", projectID).Find(&stories)
+	if result.Error != nil {
+		oapi.ServerError(w, result.Error)
+		return
+	}
+
+	oapi.SendResp(w, stories)
 }
