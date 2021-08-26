@@ -16,6 +16,10 @@ export default {
     projects: "Төслүүд",
     put_something_here: "Энд нэг юм тавиарай",
     add_backlog: "Backlog нэмэх",
+    text: "Ажил",
+    status: "Байдал",
+    point: "Оноо",
+
     _time: {
         yesterday: "Өчигдөр",
         days_ago: "өдрийн өмнө",

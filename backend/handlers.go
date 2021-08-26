@@ -38,3 +38,20 @@ func (app *application) getStories(w http.ResponseWriter, r *http.Request) {
 
 	oapi.SendResp(w, stories)
 }
+
+func (app *application) getSubtasks(w http.ResponseWriter, r *http.Request) {
+	storyID, _ := strconv.Atoi(chi.URLParam(r, "storyID"))
+	if storyID <= 0 {
+		oapi.ClientError(w, http.StatusBadRequest)
+		return
+	}
+
+	var subtasks []*entity.Subtask
+	result := app.DB.Where("user_story_id=?", storyID).Find(&subtasks)
+	if result.Error != nil {
+		oapi.ServerError(w, result.Error)
+		return
+	}
+
+	oapi.SendResp(w, subtasks)
+}

@@ -39,6 +39,7 @@ type Subtask struct {
 	Status      string
 	Point       uint
 	UserStoryID uint
+	UserStory   UserStory
 	Assignees   []SubtaskAssignee
 }
 

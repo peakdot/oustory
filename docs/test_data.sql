@@ -13,3 +13,8 @@ INSERT INTO user_stories("number", "as", "because", "want", "order", "status", "
 (7, 'Scrum master', 'Backlog-ыг хөгжүүлэгчид хуваарьлахын тулд', 'Backlog бүр дээр хүн хуваарьлаж болдог баймаар байна.', 1, 'done', 1, 2),
 (8, 'Scrum master', 'Subtask-ыг хэн хийх нь тодорхой байлгахын тулд', 'Subtask-ийг хуваарьлаж болдог баймаар байна.', 1, 'done', 8, 2),
 (9, 'Scrum master', 'Subtask-ыг үнэлэхийн тулд', 'Subtask-д оноо өгдөг баймаар байна.', 1, 'done', 2, 2);
+
+INSERT INTO subtasks ("text","order","status","point","user_story_id") VALUES
+('shdflaksj', 1, 'done', 1, 1),
+('shdflaksj', 1, 'todo', 1, 1),
+('shdflaksj', 1, 'in_progress', 1, 1);
