@@ -2,7 +2,11 @@ electron:
 	cd electron_app && yarn start
 
 ui:
-	cd frontend && yarn dev
+	yarn --cwd ./frontend dev
 
 run:
 	go run ./backend -mode=dev
+
+
+install: 
+	yarn --cwd ./frontend install
