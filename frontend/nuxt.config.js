@@ -35,6 +35,9 @@ export default {
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     "~/plugins/date.js",
+    "~/plugins/backlog_type.js",
+    "~/plugins/constants.js",
+    "~/plugins/clone.js",
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components

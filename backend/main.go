@@ -13,6 +13,13 @@ import (
 	"gorm.io/gorm"
 )
 
+type contextKey string
+
+const (
+	contextKeyChosenProject = contextKey("chosenProject")
+	contextKeyChosenBacklog = contextKey("chosenBacklog")
+)
+
 type application struct {
 	ErrorLog *log.Logger
 	InfoLog  *log.Logger
@@ -50,9 +57,9 @@ func main() {
 	// Migrate the schema
 	db.AutoMigrate(
 		&entity.Project{},
-		&entity.UserStory{},
+		&entity.Backlog{},
 		&entity.AcceptanceCriteria{},
-		&entity.UserStoryAssignee{},
+		&entity.BacklogAssignee{},
 		&entity.Subtask{},
 		&entity.SubtaskAssignee{},
 		&entity.Member{},

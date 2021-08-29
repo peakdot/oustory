@@ -7,6 +7,5 @@ ui:
 run:
 	go run ./backend -mode=dev
 
-
 install: 
 	yarn --cwd ./frontend install

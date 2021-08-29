@@ -8,12 +8,11 @@ type Project struct {
 	Logo string
 }
 
-type UserStory struct {
+type Backlog struct {
 	gorm.Model
+	Type                string
 	Number              uint
-	As                  string
-	Want                string
-	Because             string
+	Text                string
 	Order               uint
 	Status              string
 	Point               uint
@@ -21,26 +20,26 @@ type UserStory struct {
 	Project             Project
 	Subtasks            []Subtask
 	AcceptanceCriterias []AcceptanceCriteria
-	Assignees           []UserStoryAssignee
+	Assignees           []BacklogAssignee
 }
 
 type AcceptanceCriteria struct {
 	gorm.Model
-	Text        string
-	Order       uint
-	Status      string
-	UserStoryID uint
+	Text      string
+	Order     uint
+	Status    string
+	BacklogID uint
 }
 
 type Subtask struct {
 	gorm.Model
-	Text        string
-	Order       uint
-	Status      string
-	Point       uint
-	UserStoryID uint
-	UserStory   UserStory
-	Assignees   []SubtaskAssignee
+	Text      string
+	Order     uint
+	Status    string
+	Point     uint
+	BacklogID uint
+	Backlog   Backlog
+	Assignees []SubtaskAssignee
 }
 
 type SubtaskAssignee struct {
@@ -51,12 +50,12 @@ type SubtaskAssignee struct {
 	Member    Member
 }
 
-type UserStoryAssignee struct {
+type BacklogAssignee struct {
 	gorm.Model
-	UserStoryID uint
-	UserStory   UserStory
-	MemberID    uint
-	Member      Member
+	BacklogID uint
+	Backlog   Backlog
+	MemberID  uint
+	Member    Member
 }
 
 type Member struct {

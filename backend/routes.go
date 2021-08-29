@@ -20,9 +20,19 @@ func (app *application) routes() http.Handler {
 	router.Get("/ping", ping)
 
 	router.Route("/api", func(r chi.Router) {
-		r.Get("/projects", app.getProjects)
-		r.Get("/projects/{id}/stories", app.getStories)
-		r.Get("/projects/{id}/stories/{storyID}/subtasks", app.getSubtasks)
+		r.Route("/projects", func(r chi.Router) {
+			r.Get("/", app.getProjects)
+			r.With(app.setProjectCtx).Route("/{projectID}", func(r chi.Router) {
+				r.Route("/backlogs", func(r chi.Router) {
+					r.Get("/", app.getBacklogs)
+					r.Post("/", app.addBacklog)
+					r.With(app.setBacklogCtx).Route("/{backlogID}", func(r chi.Router) {
+						r.Put("/", app.editBacklog)
+						r.Get("/subtasks", app.getSubtasks)
+					})
+				})
+			})
+		})
 	})
 
 	router.Route("/pub", func(r chi.Router) {

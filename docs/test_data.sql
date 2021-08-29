@@ -3,18 +3,26 @@ INSERT INTO projects(name, logo) VALUES ('Kudos', '/no_image_available.png');
 INSERT INTO projects(name, logo) VALUES ('Payment', '/pub/uploads/project_logos/3.png');
 INSERT INTO projects(name, logo) VALUES ('QA', '/no_image_available.png');
 
-INSERT INTO user_stories("number", "as", "because", "want", "order", "status", "point", "project_id") VALUES 
-(1, 'Product owner', 'Төслөө сонгож орохын тулд', 'Төслүүдээ хармаар байна.', 1, 'done', 1, 1),
-(2, 'Product owner', 'Төслөө сонгоод доторх product backlog-оо хянахын тулд', 'Төслийн product backlog-оо хармаар байна.', 1, 'done', 3, 1),
-(3, 'Product owner', 'Хэрэгцээндээ тааруулж', 'Backlog-оо User story форматаар бичдэг баймаар байна.', 1, 'in_progress', 2, 1),
-(4, 'Product owner', 'Хөгжүүлэгчид ажлын дарааллыг тодорхой болгохын тулд', 'Backlog-оо эрэмбэлдэг баймаар байна.', 1, 'pending', 64, 1),
-(5, 'Scrum master', 'Хөгжүүлэлт хэзээ дуусахыг тооцолохын тулд', 'Backlog-д оноо тавьдаг баймаар байна.', 1, 'todo', 1, 1),
-(6, 'Scrum master', 'Backlog-ыг хөгжүүлэгчид хуваахын тулд', 'Backlog-г дотор нь subtask болгон задалмаар байна.', 1, 'rejected', 5, 2),
-(7, 'Scrum master', 'Backlog-ыг хөгжүүлэгчид хуваарьлахын тулд', 'Backlog бүр дээр хүн хуваарьлаж болдог баймаар байна.', 1, 'done', 1, 2),
-(8, 'Scrum master', 'Subtask-ыг хэн хийх нь тодорхой байлгахын тулд', 'Subtask-ийг хуваарьлаж болдог баймаар байна.', 1, 'done', 8, 2),
-(9, 'Scrum master', 'Subtask-ыг үнэлэхийн тулд', 'Subtask-д оноо өгдөг баймаар байна.', 1, 'done', 2, 2);
+INSERT INTO backlogs("number", "type", "text", "order", "status", "point", "project_id") VALUES 
+(1, 'user_story', 'Product owner, төслөө сонгож орохын тулд, төслүүдээ хармаар байна.', 1, 'done', 1, 1),
+(2, 'user_story', 'Product owner, төслөө сонгоод доторх product backlog-оо хянахын тулд, төслийн product backlog-оо хармаар байна.', 1, 'done', 3, 1),
+(3, 'user_story', 'Product owner, хэрэгцээндээ тааруулж, backlog-оо User story форматаар бичдэг баймаар байна.', 1, 'in_progress', 2, 1),
+(4, 'user_story', 'Product owner, хөгжүүлэгчид ажлын дарааллыг тодорхой болгохын тулд, backlog-оо эрэмбэлдэг баймаар байна.', 1, 'pending', 64, 1),
+(5, 'user_story', 'Scrum master хөгжүүлэлт хэзээ дуусахыг тооцолохын тулд, backlog-д оноо тавьдаг баймаар байна.', 1, 'todo', 1, 1),
+(6, 'user_story', 'Scrum master backlog-ыг хөгжүүлэгчид хуваахын тулд, backlog-г дотор нь subtask болгон задалмаар байна.', 1, 'rejected', 5, 2),
+(7, 'user_story', 'Scrum master backlog-ыг хөгжүүлэгчид хуваарьлахын тулд, backlog бүр дээр хүн хуваарьлаж болдог баймаар байна.', 1, 'done', 1, 2),
+(8, 'user_story', 'Scrum master subtask-ыг хэн хийх нь тодорхой байлгахын тулд, subtask-ийг хуваарьлаж болдог баймаар байна.', 1, 'done', 8, 2),
+(9, 'user_story', 'Scrum master subtask-ыг үнэлэхийн тулд, subtask-д оноо өгдөг баймаар байна.', 1, 'done', 2, 2),
+(10, 'technical_task', 'Бүх оролтыг Validate хийх', 1, 'done', 2, 1),
+(11, 'bug', 'Бүх юм яагаад саарал байгаад байгаан :(', 1, 'done', 2, 1);
 
-INSERT INTO subtasks ("text","order","status","point","user_story_id") VALUES
-('shdflaksj', 1, 'done', 1, 1),
-('shdflaksj', 1, 'todo', 1, 1),
-('shdflaksj', 1, 'in_progress', 1, 1);
+INSERT INTO subtasks ("text", "order", "status", "point", "backlog_id") VALUES
+('Subtask 1', 1, 'done', 1, 1),
+('Subtask 2', 1, 'todo', 1, 1),
+('Subtask 3', 1, 'in_progress', 1, 1),
+('Subtask 4', 1, 'done', 1, 2),
+('Subtask 5', 1, 'todo', 1, 2),
+('Subtask 6', 1, 'in_progress', 1, 2),
+('Subtask 7', 1, 'done', 1, 3),
+('Subtask 8', 1, 'todo', 1, 3),
+('Subtask 9', 1, 'in_progress', 1, 3);
