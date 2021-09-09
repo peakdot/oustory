@@ -17,6 +17,7 @@ export default {
     projects: "Төслүүд",
     put_something_here: "Энд нэг юм тавиарай",
     add_backlog: "Backlog нэмэх",
+    edit_backlog: "Backlog засах",
     text: "Текст",
     status: "Байдал",
     point: "Оноо",
@@ -30,6 +31,10 @@ export default {
     save: "Хадгалах",
     please_write_something_here: "☝ Энд юм бичээрэй.",
     edit: "Засах",
+    pending: "Pending",
+    rejected: "Rejected",
+    "#": "#",
+    subtasks: "Хийх зүйлс",
     _time: {
         yesterday: "Өчигдөр",
         days_ago: "өдрийн өмнө",

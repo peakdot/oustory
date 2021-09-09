@@ -23,7 +23,7 @@
                 {{ $backlogEmoji(backlog.Type) }}
                 {{ backlog.Text }}
               </td>
-              <td>
+              <td class="text-center">
                 <Status :status="backlog.Status" type="backlog"></Status>
               </td>
             </tr>
@@ -56,8 +56,14 @@ export default {
       loadingBacklogs: false,
     };
   },
+  created() {
+    this.$nuxt.$on("added-backlog", this.loadBacklogs);
+  },
   mounted() {
     this.loadBacklogs();
+  },
+  beforeDestroy() {
+    this.$nuxt.$off("added-backlog");
   },
   methods: {
     async loadBacklogs() {

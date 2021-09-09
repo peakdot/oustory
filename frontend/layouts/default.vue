@@ -7,7 +7,7 @@
         <Nuxt />
       </v-container>
     </v-main>
-    <v-footer absolute app>
+    <v-footer app>
       <span>Made with &#10084;&#65039; in {{ new Date().getFullYear() }}</span>
       <v-spacer />
       <span>Version 1.0</span>

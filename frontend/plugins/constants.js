@@ -13,7 +13,10 @@ var statuses = {
     subtask: ["todo", "in_progress", "done"],
 }
 
+var scores = [0, 1, 4, 9, 25, 64]
+
 export default ({ app }, inject) => {
     inject('colors', colors)
     inject('statuses', statuses)
+    inject('scores', scores)
 }

@@ -2,7 +2,14 @@
   <div>
     <v-row>
       <v-col>
-        <v-btn rounded color="primary" @click="addDialog = true">
+        <v-btn
+          rounded
+          color="primary"
+          @click="
+            backlogDialog = true;
+            selectedBacklog = $clone(emptyBacklog);
+          "
+        >
           <v-icon left>mdi-plus</v-icon>
           {{ $t("add_backlog") }}
         </v-btn>
@@ -19,9 +26,6 @@
     <v-dialog v-model="backlogDialog" max-width="800px">
       <BacklogShow :backlog.sync="selectedBacklog"></BacklogShow>
     </v-dialog>
-    <v-dialog v-model="addDialog" max-width="800px" style="overflow: hidden">
-      <BacklogSave @saved="onSave"></BacklogSave>
-    </v-dialog>
   </div>
 </template>
 <script>
@@ -31,15 +35,18 @@ export default {
       backlogDialog: false,
       addDialog: false,
       selectedBacklog: null,
+      emptyBacklog: {
+        ID: 0,
+        Text: "Woohoo, ajil",
+        Status: "todo",
+        Type: "user_story",
+      },
     };
   },
   methods: {
     onSelect(backlog) {
       this.backlogDialog = true;
       this.selectedBacklog = backlog;
-    },
-    onSave() {
-      this.addDialog = false;
     },
   },
 };

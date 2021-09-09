@@ -7,9 +7,11 @@ import (
 	"os"
 	"time"
 
+	_ "github.com/lib/pq"
 	"github.com/peakdot/oustory/config"
 	"github.com/peakdot/oustory/entity"
-	"gorm.io/driver/sqlite"
+	"gorm.io/driver/postgres"
+
 	"gorm.io/gorm"
 )
 
@@ -49,7 +51,7 @@ func main() {
 		errorLog.Fatal("invalid mode:", *mode)
 	}
 
-	db, err := gorm.Open(sqlite.Open("oustory.db"), &gorm.Config{})
+	db, err := gorm.Open(postgres.Open(cfg.Database), &gorm.Config{})
 	if err != nil {
 		errorLog.Fatal("failed to connect database")
 	}

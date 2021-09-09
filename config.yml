@@ -6,7 +6,7 @@ dev:
     port: 8000
 
   # Database path
-  database: "oustory.db"
+  database: "host=localhost port=5432 user=postgres password=password dbname=oustory"
 
 # Production mode
 prod:
@@ -16,4 +16,4 @@ prod:
     port: 8000
 
   # Database path
-  database: "oustory.db"
+  database: "host=localhost port=5432 user=postgres password=password dbname=oustory"

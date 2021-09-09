@@ -93,6 +93,7 @@ func (app *application) editBacklog(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// No validation. Same as addBacklog.
+	// I think it only updates non zero fields
 	if err := app.DB.Model(&backlog).Updates(entity.Backlog{
 		Type:   data.Type,
 		Text:   data.Text,
